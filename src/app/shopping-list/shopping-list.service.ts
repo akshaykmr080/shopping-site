@@ -11,6 +11,12 @@ export class ShoppingListSerice {
         this.ingredientAdd.emit()
     }
 
+    addIngredients(ingredients: Ingredient[]){
+        console.log("ingredients added "+ ingredients)
+        this.ingredients = [...this.ingredients, ...ingredients]
+        this.ingredientAdd.emit()
+    }
+
     getIngredients(){
         return this.ingredients.slice()
     }
