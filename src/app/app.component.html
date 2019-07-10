@@ -1,0 +1,7 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header (selection)="selectComponent($event)"> </app-header>
+<div class="container">
+  <app-recepies *ngIf="selectedComponent === 'recipe'"></app-recepies>
+  <app-shopping-list *ngIf="selectedComponent === 'shopping-list'"></app-shopping-list>
+</div>
+<router-outlet></router-outlet>
