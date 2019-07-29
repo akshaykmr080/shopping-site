@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { Recepie } from '../../recepie.model';
 import { RecipeService } from '../../recipe.service';
@@ -10,12 +11,12 @@ import { RecipeService } from '../../recipe.service';
 export class RecepieItemComponent implements OnInit {
 
   @Input() recipe: Recepie;
-  constructor(private recipeService: RecipeService) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onSelected() {
-    this.recipeService.recipeSelected.emit(this.recipe)
-  }
+  // onSelected() {
+  //   this.router.navigate([this.recipe.id], {relativeTo: this.route});
+  // }
 }
